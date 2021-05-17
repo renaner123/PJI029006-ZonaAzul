@@ -16,7 +16,7 @@ Tabela de conteúdos
 
 <!--te-->
 
-![cenario](img/cenario.png)
+![cenario](./cenario.png)
 
 Sistema de estacionamento "zona azul" para uma cidade.
 

@@ -91,11 +91,11 @@ sensores.
 ### Diagrama de casos de uso do servidor
 
 <div style="text-align:center">
-   <img src="./img/cases_servidor.PNG" />
+   <img src="./img/cases_servidor.png" />
 </div>
 
 ### Diagrama de casos de uso do totem
 
 <div style="text-align:center">
-   <img src="./img/cases_totem.PNG" />
+   <img src="./img/cases_totem.png" />
 </div>

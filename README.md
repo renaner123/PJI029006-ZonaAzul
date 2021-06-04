@@ -9,6 +9,9 @@ Tabela de conteúdos
    * [Diagrama de casos de uso](#Diagramas-de-casos-de-uso)
       * [Diagrama de casos de uso lado servidor](#Diagrama-de-casos-de-uso-do-servidor)
       * [Diagrama de casos de uso lado totem](#Diagrama-de-casos-de-uso-do-totem)
+   * [Descrição dos casos de uso](#Descrição-de-casos-de-uso)
+      * [Descrição de casos de uso do servidor](#Descrição-de-casos-de-uso-do-servidor)
+      * [Descrição de casos de uso do totem](#Descrição-de-casos-de-uso-do-totem)
 <!--te-->
 
 ## Proposta do Projeto da disciplina PJI029006 
@@ -99,3 +102,11 @@ sensores.
 <div style="text-align:center">
    <img src="./img/cases_totem.png" />
 </div>
+
+
+## Descrição de casos de uso
+
+### Descrição de casos de uso do servidor
+
+
+### Descrição de casos de uso do totem

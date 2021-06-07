@@ -108,5 +108,229 @@ sensores.
 
 ### Descrição de casos de uso do servidor
 
+### Criar conta (CSU00)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
+### Cadastrar veículo (CSU)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
+### Alterar veículo (CSU)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
+
+### Efetuar pagamento (CSU)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
+
+### Verificar tempo (CSU)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
+
+### Verificar histórico (CSU)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
+
+### Cadastrar sensor na vaga (CSU)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
+
+### Atualizar status da vaga  (CSU)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
+
+###  Verificar situação da vaga (CSU)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
 
 ### Descrição de casos de uso do totem
+
+
+### Verificar status do sensor (CSU00)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
+### Adicionar sensor (CSU)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
+### Remover sensor (CSU)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
+
+### Configurar sensor (CSU)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
+
+### Cadastrar carro na vaga (CSU)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
+
+### Definir tempo (CSU)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
+
+### Efetuar pagamento (CSU)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
+
+### Notificar pagamento da vaga  (CSU)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
+
+###  Consultar sensores (CSU)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
+###  Consultar vaga (CSU)
+|   |    |
+|---|---|
+|Sumário   |   |
+|Ator principal   |   |
+|Atorres secundrários   |   |
+|Pré condição | |
+|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Regras de negócio | |
+|Pós-condições| |
+
+

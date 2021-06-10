@@ -9,9 +9,8 @@ Tabela de conteúdos
    * [Diagrama de casos de uso](#Diagramas-de-casos-de-uso)
       * [Diagrama de casos de uso lado servidor](#Diagrama-de-casos-de-uso-do-servidor)
       * [Diagrama de casos de uso lado totem](#Diagrama-de-casos-de-uso-do-totem)
-   * [Descrição dos casos de uso](#Descrição-de-casos-de-uso)
-      * [Descrição de casos de uso do servidor](#Descrição-de-casos-de-uso-do-servidor)
-      * [Descrição de casos de uso do totem](#Descrição-de-casos-de-uso-do-totem)
+   * [Descrição de casos de uso do servidor](#Descrição-de-casos-de-uso-do-sistema-servidor)
+   * [Descrição de casos de uso do totem](#Descrição-de-casos-de-uso-do-totem)
 <!--te-->
 
 ## Proposta do Projeto da disciplina PJI029006 
@@ -44,39 +43,39 @@ sensores.
 </h4>
 
 ### Requisitos funcionais servidor:
-* Servidor de informar o número de vagas ocupadas 
-* Servidor deve localizar vagas na cidade 
-* Servidor deve gerar notificações para os fiscais caso haja alguma vaga com tempo excedido
-* Servidor deve gerar notificação de tempo expirando para o usuário
-* Servidor deve gerar notificação para o técnico se algum sensor estiver inoperante
-* Permitir o usuário criar uma conta
-* Permitir o usuário se autenticar no sistema
-* Permitir o usuário Cadastrar um veículo
-* Permitir o usuário Alterar veículo do cadastrado
-* Permitir o usuário Efetuar pagamento
-* Permitir o usuário Renovar vaga em uso
-* Permitir o usuário Verificar tempo decorrido
-* Permitir o usuário ver histórico de pagamentos
-* Permitir o fiscal se autenticar no sistema
-* Permitir o fiscal a verificar status do veículo
-* Permitir o fiscal gerar notificação de não conformidade para o veículo
-* Permitir o Totem cadastrar os sensores no servidor
+* **R1.** Servidor de informar o número de vagas ocupadas 
+* **R2.** Servidor deve localizar vagas na cidade 
+* **R3.** Servidor deve gerar notificações para os fiscais caso haja alguma vaga com tempo excedido
+* **R4.** Servidor deve gerar notificação de tempo expirando para o usuário
+* **R5.** Servidor deve gerar notificação para o técnico se algum sensor estiver inoperante
+* **R6.** Permitir o usuário criar uma conta
+* **R7.** Permitir o usuário se autenticar no sistema
+* **R8.** Permitir o usuário Cadastrar um veículo
+* **R9.** Permitir o usuário Alterar veículo do cadastrado
+* **R10.** Permitir o usuário Efetuar pagamento
+* **R11.** Permitir o usuário Renovar vaga em uso
+* **R12.** Permitir o usuário Verificar tempo decorrido
+* **R13.** Permitir o usuário ver histórico de pagamentos
+* **R14.** Permitir o fiscal se autenticar no sistema
+* **R15.** Permitir o fiscal a verificar status do veículo
+* **R16.** Permitir o fiscal gerar notificação de não conformidade para o veículo
+* **R17.** Permitir o Totem cadastrar os sensores no servidor
 ### Requisitos funcionis totem
-* Permitir o técnico a logar no sistema de manutenção
-* Permitir o técnico adicionar sensores
-* Permitir o técnico remover sensores
-* Permitir o técnico configurar sensores
-* Permitir o técnico verificar status dos sensores
-* Permitir o usuário cadastrar veículo na vaga
-* Permitir o usuário definir o tempo de estacionamento
-* Permitir o usuário efetuar pagamento
-* Permitir o servidor consultar status dos sensores 
-* Permitir o servidor consultar status das vagas
+* **R18.** Permitir o técnico a logar no sistema de manutenção
+* **R19.** Permitir o técnico adicionar sensores
+* **R20.** Permitir o técnico remover sensores
+* **R21.** Permitir o técnico configurar sensores
+* **R22.** Permitir o técnico verificar status dos sensores
+* **R23.** Permitir o usuário cadastrar veículo na vaga
+* **R24.** Permitir o usuário definir o tempo de estacionamento
+* **R25.** Permitir o usuário efetuar pagamento
+* **R26.** Permitir o servidor consultar status dos sensores 
+* **R27.** Permitir o servidor consultar status das vagas
 
 ### Requisitos não funcionais
-* Aplicativo deve ser desenvolvido na linguagem Java
-* A interface do usuário deve ser simples e objetiva
-* Os sensores devem ser sem fio
+* **RNF00.** Aplicativo deve ser desenvolvido na linguagem Java
+* **RNF01.** A interface do usuário deve ser simples e objetiva
+* **RNF02.** Os sensores devem ser sem fio
 
 ## Regras de negócio.
 
@@ -84,10 +83,10 @@ sensores.
 	🚧 Em construção...  🚧
 </h4>
 
-* Usuário não pode estacionar por mais de 2 horas por dia na mesma vaga
-* Usuário só pode cadastrar 1 veículo
-* Servidor deve notificar os usuário quando estiver faltando 10 minutos para acabar o seu tempo.
-* Servidor deve bloquear o usuário se tiver 3 notificações no período de 1 mês.
+* **RN00:** Usuário não pode estacionar por mais de 2 horas por dia na mesma vaga
+* **RN01:** Usuário só pode cadastrar 1 veículo
+* **RN02:** Servidor deve notificar os usuário quando estiver faltando 10 minutos para acabar o seu tempo.
+* **RN03:** Servidor deve bloquear o usuário se tiver 3 notificações no período de 1 mês.
 
 ## Diagramas de casos de uso
 
@@ -104,98 +103,94 @@ sensores.
 </div>
 
 
-## Descrição de casos de uso
+## Descrição de casos de uso do sistema servidor
 
-### Descrição de casos de uso do servidor
+### Criar conta (CSU00) 
 
-### Criar conta (CSU00)
-|   |    |
+|  Sumário | Usuário abre o aplicativo e não tem uma conta válida para usar |
 |---|---|
-|Sumário   |   |
-|Ator principal   |   |
-|Atorres secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
-|Regras de negócio | |
-|Pós-condições| |
+|Ator principal   |  Usuário |
+|Ator secundrário   | Servidor  |
+|Pré condição | N/A|
+|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção criar conta<br/> 2. Sistema fornece o campo usuário, senha, email para usuário preencher <br/> 3. Usuário preenche os dados e clica em criar  <br/> 4. Sistema válida os dados do usuário <br/> 5. Se estiver tudo certo, a conta é criada, e o caso de uso termina|
+|Regras de negócio | N/A |
+|Pós-condições| N/A |
+### Cadastrar veículo  (CSU01)
 
-### Cadastrar veículo (CSU)
-|   |    |
+| Sumário| Usuário vai cadastrar o seu veículo no sistema  |
 |---|---|
-|Sumário   |   |
-|Ator principal   |   |
-|Atorres secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
-|Regras de negócio | |
-|Pós-condições| |
+|Ator principal   |  Usuário |
+|Ator secundrário   |  Servidor |
+|Pré condição | Usuário precisa estar logado no sistema |
+|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção cadastrar veículo <br/> 2. Sistema irá fornecer o campo placa para usuário preencher <br/> 3. Sistema verifica se o carro já está cadastrado <br/> 4. Se estiver tudo certo, o sistema cadatra o veículo. Conforme [RN01](#Regras-de-negócio.), só poderá ter um veículo cadastrado, e o caso de uso termina. <br/> 5. <br/> |
+|Regras de negócio | RN01 |
+|Pós-condições| N/A |
 
-### Alterar veículo (CSU)
-|   |    |
+### Alterar veículo (CSU02)
+
+| Sumário| Usuário vai alterar o veículo cadastrado no sistema |
 |---|---|
-|Sumário   |   |
-|Ator principal   |   |
-|Atorres secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
-|Regras de negócio | |
-|Pós-condições| |
+|Ator principal   |  Usuário |
+|Ator secundrário   |  Servidor |
+|Pré condição | Usuário precisa estar logado no sistema |
+|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção alterar veículo <br/> 2. Sistema irá fornecer o campo nova placa para usuário preencher <br/> 3. Sistema verifica se o carro já está cadastrado <br/> 4. Se estiver tudo certo, o sistema altera o veículo, e o caso de uso termina. |
+|Regras de negócio | N/A |
+|Pós-condições| N/A |
 
 
-### Efetuar pagamento (CSU)
-|   |    |
+### Efetuar pagamento (CSU03)
+
+| Sumário| Usuário vai efetuar pagamento para utilizar uma vaga|
 |---|---|
-|Sumário   |   |
-|Ator principal   |   |
-|Atorres secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
-|Regras de negócio | |
-|Pós-condições| |
+|Ator principal   |  Usuário |
+|Ator secundrário   |  Servidor |
+|Pré condição | Usuário precisa estar logado no sistema e ter um carro cadastrado|
+|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção efetuar pagamento <br/> 2. Sistema irá fornecer o campo tempo para o usuário preencher <br/> 3. Se for um tempo válido, sistema atribui o tempo ao carro cadastrado <br/> 4. Usuário escolhe a forma de pagamento, e o e o caso de uso termina <br/> 5. Sistema válida o pagamento, e o e o caso de uso termina| 
+|Regras de negócio | N/A |
+|Pós-condições| N/A |
 
 
-### Verificar tempo (CSU)
-|   |    |
+### Verificar tempo (CSU04)
+
+| Sumário| Usuário deseja verificar quanto tempo ainda tem disponível na vaga|
 |---|---|
-|Sumário   |   |
-|Ator principal   |   |
-|Atorres secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
-|Regras de negócio | |
-|Pós-condições| |
+|Ator principal   |  Usuário |
+|Ator secundrário   |  Servidor |
+|Pré condição | Usuário precisa estar logado no sistema e ter um carro cadastrado|
+|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção verificar tempo  <br/> 2. Sistema irá mostrar o tempo que ainda tem disponível ao usuário, e o caso de uso termina <br/> 
+|Fluxo alternativo: Usuário deseja renovar o tempo da sua vaga |a. Sistema fornece a possibilidade do usuário definir um novo tempo para vaga <br/> b. Se o usuário escolher a opção definir tempo, entrará no caso [CSU03](#Efetuar-pagamento-(CSU03))|
+|Regras de negócio | N/A |
+|Pós-condições| N/A |
 
 
-### Verificar histórico (CSU)
-|   |    |
+### Verificar histórico (CSU05)
+
+| Sumário| Usuário deseja verificar o histórico de estacionamento realizados|
 |---|---|
-|Sumário   |   |
-|Ator principal   |   |
-|Atorres secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
-|Regras de negócio | |
-|Pós-condições| |
+|Ator principal   |  Usuário |
+|Ator secundrário   |  Servidor |
+|Pré condição | Usuário precisa estar logado no sistema|
+|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção verificar histórico <br/> 2. Sistema irá mostrar os dados referente ao seu uso do estacionamento<br/> 3. Sistema fornece a opção de salvar como arquivo, e o caso de uso termina| 
+|Regras de negócio | N/A |
+|Pós-condições| N/A |
 
+### Cadastrar sensor na vaga (CSU06)
 
-### Cadastrar sensor na vaga (CSU)
-|   |    |
+| Sumário  |  Permite o totem cadastrar um novo sensor em uma vaga  |
 |---|---|
-|Sumário   |   |
-|Ator principal   |   |
-|Atorres secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Ator principal   |  Totem |
+|Atores secundrários   |  Servidor |
+|Pré condição | N/A |
+|Fluxo principal   | 1. Totem <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
 |Regras de negócio | |
 |Pós-condições| |
 
 
 ### Atualizar status da vaga  (CSU)
-|   |    |
+| Sumário  |    |
 |---|---|
-|Sumário   |   |
 |Ator principal   |   |
-|Atorres secundrários   |   |
+|Atores secundrários   |   |
 |Pré condição | |
 |Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
 |Regras de negócio | |
@@ -203,60 +198,55 @@ sensores.
 
 
 ###  Verificar situação da vaga (CSU)
-|   |    |
+| Sumário  |    |
 |---|---|
-|Sumário   |   |
 |Ator principal   |   |
-|Atorres secundrários   |   |
+|Atores secundrários   |   |
 |Pré condição | |
 |Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
 |Regras de negócio | |
 |Pós-condições| |
 
 
-### Descrição de casos de uso do totem
+
+## Descrição de casos de uso do totem
 
 
 ### Verificar status do sensor (CSU00)
-|   |    |
+| Sumário  |    |
 |---|---|
-|Sumário   |   |
 |Ator principal   |   |
-|Atorres secundrários   |   |
+|Atores secundrários   |   |
 |Pré condição | |
 |Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
 |Regras de negócio | |
 |Pós-condições| |
 
 ### Adicionar sensor (CSU)
-|   |    |
+| Sumário  |    |
 |---|---|
-|Sumário   |   |
 |Ator principal   |   |
-|Atorres secundrários   |   |
+|Atores secundrários   |   |
 |Pré condição | |
 |Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
 |Regras de negócio | |
 |Pós-condições| |
 
 ### Remover sensor (CSU)
-|   |    |
+| Sumário  |    |
 |---|---|
-|Sumário   |   |
 |Ator principal   |   |
-|Atorres secundrários   |   |
+|Atores secundrários   |   |
 |Pré condição | |
 |Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
 |Regras de negócio | |
 |Pós-condições| |
 
-
 ### Configurar sensor (CSU)
-|   |    |
+| Sumário  |    |
 |---|---|
-|Sumário   |   |
 |Ator principal   |   |
-|Atorres secundrários   |   |
+|Atores secundrários   |   |
 |Pré condição | |
 |Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
 |Regras de negócio | |
@@ -264,11 +254,10 @@ sensores.
 
 
 ### Cadastrar carro na vaga (CSU)
-|   |    |
+| Sumário  |    |
 |---|---|
-|Sumário   |   |
 |Ator principal   |   |
-|Atorres secundrários   |   |
+|Atores secundrários   |   |
 |Pré condição | |
 |Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
 |Regras de negócio | |
@@ -276,11 +265,10 @@ sensores.
 
 
 ### Definir tempo (CSU)
-|   |    |
+| Sumário  |    |
 |---|---|
-|Sumário   |   |
 |Ator principal   |   |
-|Atorres secundrários   |   |
+|Atores secundrários   |   |
 |Pré condição | |
 |Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
 |Regras de negócio | |
@@ -288,11 +276,10 @@ sensores.
 
 
 ### Efetuar pagamento (CSU)
-|   |    |
+| Sumário  |    |
 |---|---|
-|Sumário   |   |
 |Ator principal   |   |
-|Atorres secundrários   |   |
+|Atores secundrários   |   |
 |Pré condição | |
 |Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
 |Regras de negócio | |
@@ -300,37 +287,31 @@ sensores.
 
 
 ### Notificar pagamento da vaga  (CSU)
-|   |    |
+| Sumário  |    |
 |---|---|
-|Sumário   |   |
 |Ator principal   |   |
-|Atorres secundrários   |   |
+|Atores secundrários   |   |
 |Pré condição | |
 |Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
 |Regras de negócio | |
 |Pós-condições| |
-
 
 ###  Consultar sensores (CSU)
-|   |    |
+| Sumário  |    |
 |---|---|
-|Sumário   |   |
 |Ator principal   |   |
-|Atorres secundrários   |   |
+|Atores secundrários   |   |
 |Pré condição | |
 |Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
 |Regras de negócio | |
 |Pós-condições| |
-
 ###  Consultar vaga (CSU)
-|   |    |
+| Sumário  |    |
 |---|---|
-|Sumário   |   |
 |Ator principal   |   |
-|Atorres secundrários   |   |
+|Atores secundrários   |   |
 |Pré condição | |
 |Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
 |Regras de negócio | |
 |Pós-condições| |
-
 

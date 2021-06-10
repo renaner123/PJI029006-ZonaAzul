@@ -145,7 +145,7 @@ sensores.
 |Ator principal   |  Usuário |
 |Ator secundrário   |  Servidor |
 |Pré condição | Usuário precisa estar logado no sistema e ter um carro cadastrado|
-|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção efetuar pagamento <br/> 2. Sistema irá fornecer o campo tempo para o usuário preencher <br/> 3. Se for um tempo válido, sistema atribui o tempo ao carro cadastrado <br/> 4. Usuário escolhe a forma de pagamento, e o e o caso de uso termina <br/> 5. Sistema válida o pagamento, e o e o caso de uso termina| 
+|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção efetuar pagamento <br/> 2. Sistema irá fornecer o campo tempo para o usuário preencher <br/> 3. Se for um tempo válido, sistema atribui o tempo ao carro cadastrado <br/> 4. Usuário escolhe a forma de pagamento <br/> 5. Sistema válida o pagamento a atualiza status da vaga, e o caso de uso termina| 
 |Regras de negócio | N/A |
 |Pós-condições| N/A |
 
@@ -157,8 +157,8 @@ sensores.
 |Ator principal   |  Usuário |
 |Ator secundrário   |  Servidor |
 |Pré condição | Usuário precisa estar logado no sistema e ter um carro cadastrado|
-|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção verificar tempo  <br/> 2. Sistema irá mostrar o tempo que ainda tem disponível ao usuário, e o caso de uso termina <br/> 
-|Fluxo alternativo: Usuário deseja renovar o tempo da sua vaga |a. Sistema fornece a possibilidade do usuário definir um novo tempo para vaga <br/> b. Se o usuário escolher a opção definir tempo, entrará no caso [CSU03](#Efetuar-pagamento-(CSU03))|
+|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção verificar tempo  <br/> 2. Sistema irá mostrar o tempo que ainda tem disponível ao usuário, e o caso de uso termina <br/> 7
+|Fluxo alternativo(1): Usuário deseja renovar o tempo da sua vaga |a. Sistema fornece a possibilidade do usuário definir um novo tempo para vaga <br/> b. Se o usuário escolher a opção definir tempo, entrará no caso [CSU03](#Efetuar-pagamento-(CSU03))|
 |Regras de negócio | N/A |
 |Pós-condições| N/A |
 
@@ -181,31 +181,32 @@ sensores.
 |Ator principal   |  Totem |
 |Atores secundrários   |  Servidor |
 |Pré condição | N/A |
-|Fluxo principal   | 1. Totem <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
-|Regras de negócio | |
-|Pós-condições| |
+|Fluxo principal   | 1. Totem solicita ao servidor a opção de configurar um sensor em uma vaga <br/> 2. Sistema irá solicitar o identificar do sensor e em qual vaga deseja configurar <br/> 3. Sistema adiciona o sensor em uma vaga se ela não tiver sensor configurado, e o caso de uso termina|
+|Regras de negócio | N/A |
+|Pós-condições| N/A |
 
 
-### Atualizar status da vaga  (CSU)
-| Sumário  |    |
+### Atualizar status da vaga  (CSU07)
+| Sumário  |  Totem pode alterar sensor ou remover sensor de uma vaga  |
 |---|---|
-|Ator principal   |   |
-|Atores secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
-|Regras de negócio | |
-|Pós-condições| |
+|Ator principal   | Totem  |
+|Atores secundrários   | Servidor  |
+|Pré condição | N/A |
+|Fluxo principal   | 1. Totem solicta ao servidor a opção de atualizar status de uma vaga <br/> 2. Sistema fornece a opção de alterar um sensor de uma vaga <br/> 3. Sistema solicita o identificador do sensor atual e do novo <br /> 4. Se o novo sensor não estiver cadastrado em nenhuma vaga, é cadastrado e o caso de uso termina|
+|Fluxo Alternativo(1): Totem deseja remover um sensor   | a. Sistema fornece a opção de remover um sensor de uma vaga <br/> b. Sistema solicita o identificador do sensor a ser removido <br/> c. Sistema remove o sensor da vaga, e o caso de uso termina|
+|Regras de negócio | N/A |
+|Pós-condições| N/A |
 
 
-###  Verificar situação da vaga (CSU)
-| Sumário  |    |
+###  Verificar situação da vaga (CSU08)
+| Sumário  |  Fiscal deseja consultar a situação de uma vaga |
 |---|---|
-|Ator principal   |   |
-|Atores secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
-|Regras de negócio | |
-|Pós-condições| |
+|Ator principal   |  Fiscal |
+|Atores secundrários   | Servidor  |
+|Pré condição | Fiscal precisa estar logado no sistema|
+|Fluxo principal   | 1. Fiscal solicita ao servidor a situação atual da vaga <br/> 2. Sistema informa se a vaga está válida ou inválida <br/> 3. Fiscal confirma se a informação está condizente <br/> 4. Sistema atualiza status da vaga caso não esteja de acordo, e o caso de uso termina|
+|Regras de negócio | N/A |
+|Pós-condições| Confirmar situação vaga |
 
 
 

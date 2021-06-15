@@ -107,12 +107,12 @@ sensores.
 
 ### Criar conta (CSU00) 
 
-|  Sumário | Usuário abre o aplicativo e não tem uma conta válida para usar |
+|  Sumário | Usuário usa o sistema para criar uma nova conta |
 |---|---|
 |Ator principal   |  Usuário |
-|Ator secundrário   | Servidor  |
+|Ator secundrário   |  N/A |
 |Pré condição | N/A|
-|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção criar conta<br/> 2. Sistema fornece o campo usuário, senha, email para usuário preencher <br/> 3. Usuário preenche os dados e clica em criar  <br/> 4. Sistema válida os dados do usuário <br/> 5. Se estiver tudo certo, a conta é criada, e o caso de uso termina|
+|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção criar conta<br/> 2. Sistema fornece o campo usuário, senha e email para usuário preencher <br/> 3. Usuário preenche os dados e clica em criar  <br/> 4. Sistema válida os dados do usuário <br/> 5. Sistema cria a conta, e o caso de uso termina|
 |Regras de negócio | N/A |
 |Pós-condições| N/A |
 ### Cadastrar veículo  (CSU01)
@@ -120,9 +120,10 @@ sensores.
 | Sumário| Usuário vai cadastrar o seu veículo no sistema  |
 |---|---|
 |Ator principal   |  Usuário |
-|Ator secundrário   |  Servidor |
+|Ator secundrário   |  N/A |
 |Pré condição | Usuário precisa estar logado no sistema |
-|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção cadastrar veículo <br/> 2. Sistema irá fornecer o campo placa para usuário preencher <br/> 3. Sistema verifica se o carro já está cadastrado <br/> 4. Se estiver tudo certo, o sistema cadatra o veículo. Conforme [RN01](#Regras-de-negócio.), só poderá ter um veículo cadastrado, e o caso de uso termina. <br/> 5. <br/> |
+|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção cadastrar veículo <br/> 2. Sistema irá fornecer o campo placa para usuário preencher <br/> 3. Sistema verifica se o carro já está cadastrado <br/> 4. Sistema cadatra o veículo. Conforme [RN01](#Regras-de-negócio.), só poderá ter um veículo cadastrado, e o caso de uso termina. <br/> |
+|Fluxo Exceção(3): Placa já cadastrada | a.  O sistema reporta o fato, e retorna para o passo 2.| 
 |Regras de negócio | RN01 |
 |Pós-condições| N/A |
 
@@ -131,9 +132,10 @@ sensores.
 | Sumário| Usuário vai alterar o veículo cadastrado no sistema |
 |---|---|
 |Ator principal   |  Usuário |
-|Ator secundrário   |  Servidor |
+|Ator secundrário   |  N/A |
 |Pré condição | Usuário precisa estar logado no sistema |
-|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção alterar veículo <br/> 2. Sistema irá fornecer o campo nova placa para usuário preencher <br/> 3. Sistema verifica se o carro já está cadastrado <br/> 4. Se estiver tudo certo, o sistema altera o veículo, e o caso de uso termina. |
+|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção alterar veículo <br/> 2. Sistema irá fornecer o campo nova placa para usuário preencher <br/> 3. Sistema verifica se o carro já está cadastrado <br/> 4. Sistema altera o veículo, e o caso de uso termina. |
+|Fluxo Exceção(3): Placa já cadastrada | a.  O sistema reporta o fato, e retorna para o passo 2.| 
 |Regras de negócio | N/A |
 |Pós-condições| N/A |
 
@@ -143,9 +145,10 @@ sensores.
 | Sumário| Usuário vai efetuar pagamento para utilizar uma vaga|
 |---|---|
 |Ator principal   |  Usuário |
-|Ator secundrário   |  Servidor |
+|Ator secundrário   |  N/A |
 |Pré condição | Usuário precisa estar logado no sistema e ter um carro cadastrado|
-|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção efetuar pagamento <br/> 2. Sistema irá fornecer o campo tempo para o usuário preencher <br/> 3. Se for um tempo válido, sistema atribui o tempo ao carro cadastrado <br/> 4. Usuário escolhe a forma de pagamento <br/> 5. Sistema válida o pagamento a atualiza status da vaga, e o caso de uso termina| 
+|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção efetuar pagamento <br/> 2. Sistema irá fornecer o campo tempo e a vaga para o usuário preencher <br/> 3. Sistema verifica se a vaga está livre <br/> 4. Usuário escolhe o tempo que deseja estacionar <br/> 5. Sistema atribui o tempo ao carro cadastrado <br/>6. Usuário escolhe a forma de pagamento <br/> 7. Sistema válida o pagamento a atualiza status da vaga, e o caso de uso termina| 
+|Fluxo Exceção(3): Vaga ocupada | a.  O sistema reporta o fato, e o caso de uso termina.| 
 |Regras de negócio | N/A |
 |Pós-condições| N/A |
 
@@ -155,22 +158,22 @@ sensores.
 | Sumário| Usuário deseja verificar quanto tempo ainda tem disponível na vaga|
 |---|---|
 |Ator principal   |  Usuário |
-|Ator secundrário   |  Servidor |
+|Ator secundrário   |  N/A |
 |Pré condição | Usuário precisa estar logado no sistema e ter um carro cadastrado|
-|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção verificar tempo  <br/> 2. Sistema irá mostrar o tempo que ainda tem disponível ao usuário, e o caso de uso termina <br/> 7
-|Fluxo alternativo(1): Usuário deseja renovar o tempo da sua vaga |a. Sistema fornece a possibilidade do usuário definir um novo tempo para vaga <br/> b. Se o usuário escolher a opção definir tempo, entrará no caso [CSU03](#Efetuar-pagamento-(CSU03))|
+|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção verificar tempo  <br/> 2. Sistema irá mostrar o tempo que ainda tem disponível ao usuário, e o caso de uso termina <br/>
+|Fluxo alternativo(2): Usuário deseja renovar o tempo da sua vaga |a. Sistema fornece a possibilidade do usuário definir um novo tempo para vaga <br/> b. Se o usuário escolher a opção definir tempo, entrará no caso [CSU03](#Efetuar-pagamento-(CSU03))|
 |Regras de negócio | N/A |
 |Pós-condições| N/A |
 
 
 ### Verificar histórico (CSU05)
 
-| Sumário| Usuário deseja verificar o histórico de estacionamento realizados|
+| Sumário| Usuário deseja verificar o histórico de estacionamentos realizados|
 |---|---|
 |Ator principal   |  Usuário |
-|Ator secundrário   |  Servidor |
+|Ator secundrário   |  N/A |
 |Pré condição | Usuário precisa estar logado no sistema|
-|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção verificar histórico <br/> 2. Sistema irá mostrar os dados referente ao seu uso do estacionamento<br/> 3. Sistema fornece a opção de salvar como arquivo, e o caso de uso termina| 
+|Fluxo principal   | 1. Usuário abre o aplicativo e escolhe a opção verificar histórico <br/> 2. Sistema irá mostrar os dados referente ao seu uso do estacionamento<br/> 3. Sistema fornece a opção de salvar como arquivo <br/> 4. Usuário escolhe salvar ou não o arquivo e o caso de uso termina | 
 |Regras de negócio | N/A |
 |Pós-condições| N/A |
 
@@ -179,9 +182,10 @@ sensores.
 | Sumário  |  Permite o totem cadastrar um novo sensor em uma vaga  |
 |---|---|
 |Ator principal   |  Totem |
-|Atores secundrários   |  Servidor |
+|Atores secundrários   |  N/A |
 |Pré condição | N/A |
-|Fluxo principal   | 1. Totem solicita ao servidor a opção de configurar um sensor em uma vaga <br/> 2. Sistema irá solicitar o identificar do sensor e em qual vaga deseja configurar <br/> 3. Sistema adiciona o sensor em uma vaga se ela não tiver sensor configurado, e o caso de uso termina|
+|Fluxo principal   | 1. Totem solicita ao servidor a opção de configurar um sensor em uma vaga <br/> 2. Sistema irá solicitar o identificador do sensor e em qual vaga deseja configurar <br/> 3. Sistema verifica se a vaga está disponível<br/> 4. Sistema adiciona o sensor na vaga e o caso de uso termina|
+|Fluxo Exceção(3): Vaga já possui um sensor cadastrado | a.  O sistema reporta o fato, e o caso de uso termina.| 
 |Regras de negócio | N/A |
 |Pós-condições| N/A |
 
@@ -190,10 +194,10 @@ sensores.
 | Sumário  |  Totem pode alterar sensor ou remover sensor de uma vaga  |
 |---|---|
 |Ator principal   | Totem  |
-|Atores secundrários   | Servidor  |
+|Atores secundrários   | N/A  |
 |Pré condição | N/A |
-|Fluxo principal   | 1. Totem solicta ao servidor a opção de atualizar status de uma vaga <br/> 2. Sistema fornece a opção de alterar um sensor de uma vaga <br/> 3. Sistema solicita o identificador do sensor atual e do novo <br /> 4. Se o novo sensor não estiver cadastrado em nenhuma vaga, é cadastrado e o caso de uso termina|
-|Fluxo Alternativo(1): Totem deseja remover um sensor   | a. Sistema fornece a opção de remover um sensor de uma vaga <br/> b. Sistema solicita o identificador do sensor a ser removido <br/> c. Sistema remove o sensor da vaga, e o caso de uso termina|
+|Fluxo principal   | 1. Totem solicta ao servidor a opção de atualizar status de uma vaga <br/>2. Sistema fornece a opção de alterar um sensor da vaga <br/> 3. Sistema solicita o identificador da vaga <br />4. Sistema verifica se o novo sensor já está cadastrado <br/> 5. Sistema altera o sensor da vaga o caso de uso termina|
+|Fluxo Alternativo(2): Totem deseja remover um sensor   | a. Sistema fornece a opção de remover um sensor de uma vaga <br/> b. Sistema solicita o identificador do sensor a ser removido <br/> c. Sistema remove o sensor da vaga, e o caso de uso termina|
 |Regras de negócio | N/A |
 |Pós-condições| N/A |
 
@@ -202,9 +206,9 @@ sensores.
 | Sumário  |  Fiscal deseja consultar a situação de uma vaga |
 |---|---|
 |Ator principal   |  Fiscal |
-|Atores secundrários   | Servidor  |
+|Atores secundrários   | N/A  |
 |Pré condição | Fiscal precisa estar logado no sistema|
-|Fluxo principal   | 1. Fiscal solicita ao servidor a situação atual da vaga <br/> 2. Sistema informa se a vaga está válida ou inválida <br/> 3. Fiscal confirma se a informação está condizente <br/> 4. Sistema atualiza status da vaga caso não esteja de acordo, e o caso de uso termina|
+|Fluxo principal   | 1. Fiscal solicita ao servidor a situação atual da vaga <br/> 2. Sistema informa a situação da vaga <br/> 3. Fiscal confirma se a informação está condizente <br/> 4. Sistema atualiza status da vaga caso não esteja de acordo, e o caso de uso termina|
 |Regras de negócio | N/A |
 |Pós-condições| Confirmar situação vaga |
 

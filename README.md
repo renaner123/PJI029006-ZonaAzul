@@ -217,106 +217,75 @@ sensores.
 ## Descrição de casos de uso do totem
 
 
-### Verificar status do sensor (CSU00)
-| Sumário  |    |
+### Verificar status do sensor (CSU09)
+| Sumário  | Técnico verifica um sensor na lista de sensores |
 |---|---|
-|Ator principal   |   |
-|Atores secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
-|Regras de negócio | |
-|Pós-condições| |
+|Ator principal   | Técnico  |
+|Atores secundrários   | N/A |
+|Pré condição | Técnico está logado no sistema |
+|Fluxo principal   | 1. Técnico entra no menu de verificar status do sensor <br/> 2. Totem apresenta a lista de sensores <br/> 3. Técnico seleciona o sensor a ser verificado <br/> 4. Totem mostra o status do sensor selecionado <br/> 5. <br/> |
+|Regras de negócio | N/A |
+|Pós-condições| Mostra na tela as informações do sensor escolhido |
 
-### Adicionar sensor (CSU)
-| Sumário  |    |
+### Adicionar sensor (CSU10)
+| Sumário  | Técnico adiciona um sensor na lista de sensores |
 |---|---|
-|Ator principal   |   |
-|Atores secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
-|Regras de negócio | |
-|Pós-condições| |
+|Ator principal   | Técnico |
+|Atores secundrários   | N/A |
+|Pré condição | Técnico está logado no sistema |
+|Fluxo principal   | 1. Técnico entra no menu de adicionar sensor <br/> 2. Tecnico insere ID e posição do sensor <br/> 3. Totem adiciona o sensor escolhido na lista de sensores <br/> |
+|Regras de negócio | N/A |
+|Pós-condições| Mostra na lista o sensor adicionado |
 
-### Remover sensor (CSU)
-| Sumário  |    |
+### Remover sensor (CSU11)
+| Sumário  | Técnico remove um sensor na lista de sensores  |
 |---|---|
-|Ator principal   |   |
-|Atores secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
+|Ator principal   | Técnico |
+|Atores secundrários   | N/A |
+|Pré condição | Técnico está logado no sistema |
+|Fluxo principal   | 1. Técnico entra no menu de remover sensor  <br/> 2. Totem apresenta a lista dos sensores ativos no momento <br/> 3. Técnico seleciona o sensor escolhido a ser removido
+ <br/> 4. Totem remove o sensor escolhido da lista de sensores <br/> |
 |Regras de negócio | |
-|Pós-condições| |
+|Pós-condições| O sensor removido não aparece mais na lista de sensores |
 
-### Configurar sensor (CSU)
-| Sumário  |    |
+### Configurar sensor em uma vaga (CSU12)
+| Sumário  | Técnico configura um sensor na vaga  |
 |---|---|
-|Ator principal   |   |
-|Atores secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
-|Regras de negócio | |
-|Pós-condições| |
+|Ator principal   | Técnico |
+|Atores secundrários   | Servidor  |
+|Pré condição | Técnico está logado no sistema |
+|Fluxo principal   | 1. Técnico entra no menu de configurar sensor <br/> 2. Totem apresenta a tela de configuração de sensor na vaga <br/> 3. Técnico configura o sensor <br/> 4. Servidor adiciona o sensor configurado a vaga correspondente <br/> |
+|Regras de negócio | N/A |
+|Pós-condições| Sensor cadastrado na vaga |
 
 
-### Cadastrar carro na vaga (CSU)
-| Sumário  |    |
+### Cadastrar carro na vaga (CSU1)
+| Sumário  | Usuário cadastra seu veículo na vaga |
 |---|---|
-|Ator principal   |   |
+|Ator principal   | Usuario |
 |Atores secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
-|Regras de negócio | |
-|Pós-condições| |
-
-
-### Definir tempo (CSU)
-| Sumário  |    |
-|---|---|
-|Ator principal   |   |
-|Atores secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
-|Regras de negócio | |
-|Pós-condições| |
-
-
-### Efetuar pagamento (CSU)
-| Sumário  |    |
-|---|---|
-|Ator principal   |   |
-|Atores secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
-|Regras de negócio | |
-|Pós-condições| |
-
+|Pré condição | Usuário está logado no sistema |
+|Fluxo principal   | 1. Usuário entra no menu de cadastrar veículo <br/> 2. Servidor apresenta uma caixa de diálogo para cadastro de veículo contendo placa, marca, modelo, tempo a ser utilizado <br/> 3. Usuário insere os dados do veículo <br/> 4.  Usuário confirma os dados <br/> 5. Usuário efetua o pagamento <br/> 6. Servidor cadastra o veículo ao sensor(vaga) selecionado <br/> |
+|Regras de negócio | N/A |
+|Pós-condições| Veiculo cadastrado na vaga com sucesso |
 
 ### Notificar pagamento da vaga  (CSU)
-| Sumário  |    |
+| Sumário  | O sistema notifica ao servidor se a vaga foi paga |
 |---|---|
-|Ator principal   |   |
-|Atores secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
-|Regras de negócio | |
-|Pós-condições| |
+|Ator principal   | Usuario  |
+|Atores secundrários   | Servidor |
+|Pré condição | Usuário logado no sistema |
+|Fluxo principal   | 1. Servidor verifica os dados de pagamento <br/> 2. Servidor recebe confirmação dos validos <br/> 3. Servidor libera a vaga para usuario <br/>Fluxo Alternativo(2) : No caso do servidor não receber a confirmação do pagamento <br/>- Servidor retorna uma mensagem de erro informando que o pagamento não foi confirmado<br/> |
+|Regras de negócio | N/A |
+|Pós-condições| Vaga liberada para o Usuario |
 
-###  Consultar sensores (CSU)
-| Sumário  |    |
-|---|---|
-|Ator principal   |   |
-|Atores secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
-|Regras de negócio | |
-|Pós-condições| |
 ###  Consultar vaga (CSU)
-| Sumário  |    |
+| Sumário  | Servidor mostra vagas disponiveis  |
 |---|---|
-|Ator principal   |   |
-|Atores secundrários   |   |
-|Pré condição | |
-|Fluxo principal   | 1. <br/> 2. <br/> 3. <br/> 4. <br/> 5. <br/> |
-|Regras de negócio | |
-|Pós-condições| |
+|Ator principal   | Servidor |
+|Atores secundrários   | Sensor |
+|Pré condição | Sensores conectados ao Servidor |
+|Fluxo principal   | 1. Servidor requisita informações das vagas aos sensores <br/> 2. Sensor envia as informações das vagas ao servidor <br/> 3. Servidor atualiza as informações das vagas <br/> |
+|Regras de negócio | N/A |
+|Pós-condições| Servidor com informações atualizadas sobre as vagas |
 

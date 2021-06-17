@@ -221,21 +221,22 @@ sensores.
 | Sumário  | Técnico verifica um sensor na lista de sensores |
 |---|---|
 |Ator principal   | Técnico  |
-|Atores secundrários   | N/A |
-|Pré condição | Técnico está logado no sistema |
-|Fluxo principal   | 1. Técnico entra no menu de verificar status do sensor <br/> 2. Totem apresenta a lista de sensores <br/> 3. Técnico seleciona o sensor a ser verificado <br/> 4. Totem mostra o status do sensor selecionado <br/> 5. <br/> |
+|Atores secundrários   | Sensor |
+|Pré condição | Técnico estar logado no sistema |
+|Fluxo principal   | 1. Técnico entra no menu de verificar status do sensor <br/> 2. Totem apresenta a lista de sensores <br/> 3. Técnico seleciona o sensor a ser verificado <br/> 4. Totem consulta o sensor para verificar seu status<br/>5. Totem mostra o status do sensor selecionado e o caso de uso termina <br/> |
 |Regras de negócio | N/A |
-|Pós-condições| Mostra na tela as informações do sensor escolhido |
+|Pós-condições| N/A |
 
 ### Adicionar sensor (CSU10)
 | Sumário  | Técnico adiciona um sensor na lista de sensores |
 |---|---|
 |Ator principal   | Técnico |
 |Atores secundrários   | N/A |
-|Pré condição | Técnico está logado no sistema |
-|Fluxo principal   | 1. Técnico entra no menu de adicionar sensor <br/> 2. Tecnico insere ID e posição do sensor <br/> 3. Totem adiciona o sensor escolhido na lista de sensores <br/> |
+|Pré condição | Técnico estar logado no sistema |
+|Fluxo principal   | 1. Técnico entra no menu de adicionar sensor <br/> 2. Tecnico insere ID e posição do sensor <br/> 3. Totem verifica se o ID do sensor e a posição já existem <br/> 4. Totem adiciona o sensor na lista de sensores, e o caso de uso termina <br/> |
+|Fluxo execção(3): ID ou posição inválida   | a. Totem notifica o ocorrido e o caso de uso termina
 |Regras de negócio | N/A |
-|Pós-condições| Mostra na lista o sensor adicionado |
+|Pós-condições| N/A |
 
 ### Remover sensor (CSU11)
 | Sumário  | Técnico remove um sensor na lista de sensores  |
@@ -243,10 +244,9 @@ sensores.
 |Ator principal   | Técnico |
 |Atores secundrários   | N/A |
 |Pré condição | Técnico está logado no sistema |
-|Fluxo principal   | 1. Técnico entra no menu de remover sensor  <br/> 2. Totem apresenta a lista dos sensores ativos no momento <br/> 3. Técnico seleciona o sensor escolhido a ser removido
- <br/> 4. Totem remove o sensor escolhido da lista de sensores <br/> |
+|Fluxo principal   | 1. Técnico entra no menu de remover sensor  <br/> 2. Totem apresenta a lista dos sensores ativos no momento <br/> 3. Técnico seleciona o sensor a ser removido<br/> 4. Totem remove o sensor escolhido da lista de sensores, e o caso de uso termina <br/> |
 |Regras de negócio | |
-|Pós-condições| O sensor removido não aparece mais na lista de sensores |
+|Pós-condições| N/A |
 
 ### Configurar sensor em uma vaga (CSU12)
 | Sumário  | Técnico configura um sensor na vaga  |
@@ -254,38 +254,39 @@ sensores.
 |Ator principal   | Técnico |
 |Atores secundrários   | Servidor  |
 |Pré condição | Técnico está logado no sistema |
-|Fluxo principal   | 1. Técnico entra no menu de configurar sensor <br/> 2. Totem apresenta a tela de configuração de sensor na vaga <br/> 3. Técnico configura o sensor <br/> 4. Servidor adiciona o sensor configurado a vaga correspondente <br/> |
+|Fluxo principal   | 1. Técnico entra no menu de configurar sensor <br/> 2. Totem solicita o identificador do sensor e em qual vaga deseja configurar<br/> 3. Técnico informa qual sensor deseja configurar<br/> 4. Totem encaminha a configuração para o servidor <br/> 5. Totem informa se teve sucesso em adicionar o sensor, e o caso de uso termina|
 |Regras de negócio | N/A |
-|Pós-condições| Sensor cadastrado na vaga |
+|Pós-condições| N/A |
 
 
-### Cadastrar carro na vaga (CSU1)
+### Cadastrar carro na vaga (CSU13)
 | Sumário  | Usuário cadastra seu veículo na vaga |
 |---|---|
 |Ator principal   | Usuario |
-|Atores secundrários   |   |
-|Pré condição | Usuário está logado no sistema |
-|Fluxo principal   | 1. Usuário entra no menu de cadastrar veículo <br/> 2. Servidor apresenta uma caixa de diálogo para cadastro de veículo contendo placa, marca, modelo, tempo a ser utilizado <br/> 3. Usuário insere os dados do veículo <br/> 4.  Usuário confirma os dados <br/> 5. Usuário efetua o pagamento <br/> 6. Servidor cadastra o veículo ao sensor(vaga) selecionado <br/> |
+|Atores secundrários   | Servidor|
+|Pré condição | N/A |
+|Fluxo principal   | 1. Usuário entra no menu de cadastrar veículo <br/> 2. Totem apresenta uma caixa de diálogo para cadastro de veículo contendo placa, tempo a ser utilizado e a vaga <br/> 3. Usuário insere os dados<br/>4. Usuário confirma os dados <br/> 5. Sistema verifica se a vaga está disponpivel <br/> 6. Usuário efetua o pagamento <br/> 7. Totem válida o pagamento <br/> 8. Totem notifica o servidor sobre o pagamento, e o caso de uso termina <br/> |
+|Fluxo de exceção:(5): Vaga já está ocupada| a. Totem notifica o servidor pra verificar se a vaga realmente está ocupada |
 |Regras de negócio | N/A |
-|Pós-condições| Veiculo cadastrado na vaga com sucesso |
+|Pós-condições| Notificar pagamento da vaga |
 
-### Notificar pagamento da vaga  (CSU)
-| Sumário  | O sistema notifica ao servidor se a vaga foi paga |
+### Notificar pagamento da vaga  (CSU14)
+| Sumário  | O sistema notifica o servidor que a vaga foi paga(caso de uso interno) |
 |---|---|
-|Ator principal   | Usuario  |
+|Ator principal   | Totem  |
 |Atores secundrários   | Servidor |
-|Pré condição | Usuário logado no sistema |
-|Fluxo principal   | 1. Servidor verifica os dados de pagamento <br/> 2. Servidor recebe confirmação dos validos <br/> 3. Servidor libera a vaga para usuario <br/>Fluxo Alternativo(2) : No caso do servidor não receber a confirmação do pagamento <br/>- Servidor retorna uma mensagem de erro informando que o pagamento não foi confirmado<br/> |
+|Pré condição | N/A |
+|Fluxo principal   | 1. Totem notifica o servidor que o usuário efetuou o pagamento para uma vaga <br/> 2. Totem aguarda confirmação do Servidor <br/> 3. Totem notifica a resposta do servidor ao usuário, e o caso de uso termina| 
 |Regras de negócio | N/A |
-|Pós-condições| Vaga liberada para o Usuario |
+|Pós-condições| N/A |
 
-###  Consultar vaga (CSU)
+###  Consultar vaga (CSU15)
 | Sumário  | Servidor mostra vagas disponiveis  |
 |---|---|
 |Ator principal   | Servidor |
 |Atores secundrários   | Sensor |
-|Pré condição | Sensores conectados ao Servidor |
-|Fluxo principal   | 1. Servidor requisita informações das vagas aos sensores <br/> 2. Sensor envia as informações das vagas ao servidor <br/> 3. Servidor atualiza as informações das vagas <br/> |
+|Pré condição | Sensores do Totem cadastrados no servidor |
+|Fluxo principal   | 1. Servidor requisita informação sobre o sensor da vaga ao Totem <br/> 2. Totem consulta informação do sensor cadastrado na vaga<br/> 3. Totem nofica o servidor sobre o status do sensor, e o caso e uso termina |
 |Regras de negócio | N/A |
-|Pós-condições| Servidor com informações atualizadas sobre as vagas |
+|Pós-condições| N/A |
 

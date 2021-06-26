@@ -11,6 +11,7 @@ Tabela de conteúdos
       * [Diagrama de casos de uso lado totem](#Diagrama-de-casos-de-uso-do-totem)
    * [Descrição de casos de uso do servidor](#Descrição-de-casos-de-uso-do-sistema-servidor)
    * [Descrição de casos de uso do totem](#Descrição-de-casos-de-uso-do-totem)
+   * [Diagrama de classes](#Diagrama-de-classes)
 <!--te-->
 
 ## Proposta do Projeto da disciplina PJI029006 
@@ -290,3 +291,9 @@ sensores.
 |Regras de negócio | N/A |
 |Pós-condições| N/A |
 
+
+## Diagrama de classes
+
+<div style="text-align:center">
+   <img src="./img/diagrama_classe.PNG" />
+</div>

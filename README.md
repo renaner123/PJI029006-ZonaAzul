@@ -13,7 +13,7 @@ Tabela de conteúdos
    * [Descrição de casos de uso do totem](#Descrição-de-casos-de-uso-do-totem)
    * [Diagrama de classe sistema Servidor](#Diagrama-de-classe-sistema-Servidor)
    * [Diagrama de classe sistema Totem](#Diagrama-de-classe-sistema-Totem)
-   
+   * [Diagrama de sequências](#Diagrama-de-sequência-efetuar-pagamento-sistema-Servidor)
 <!--te-->
 
 ## Proposta do Projeto da disciplina PJI029006 
@@ -294,14 +294,26 @@ sensores.
 |Pós-condições| N/A |
 
 
-## Diagrama de classe sistema Servidor
+### Diagrama de classe sistema Servidor
 
 <div style="text-align:center">
    <img src="./img/diagrama_classe_servidor.PNG" />
 </div>
 
-## Diagrama de classe sistema Totem
+### Diagrama de classe sistema Totem
 
 <div style="text-align:center">
    <img src="./img/diagrama_classe_Totem.PNG" />
+</div>
+
+### Diagrama de sequência efetuar pagamento sistema Servidor
+
+<div style="text-align:center">
+   <img src="./img/Sequence_efetuar_pagamento.PNG" />
+</div>
+
+### Diagrama de sequência notificar pagamento sistema Totem
+
+<div style="text-align:center">
+   <img src="./img/Sequence_notificar_pagamento.PNG" />
 </div>

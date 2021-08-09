@@ -4,8 +4,10 @@ class Fiscal:
     cpfPessoa = ""
     nome = ""
 
-    def __init__(self):
-        pass
+    def __init__(self, id, cpf, nome):
+        self.idFiscal = id
+        self.cpfPessoa = cpf
+        self.nome = nome
 
     def gerarNotificacao(self):
         return 

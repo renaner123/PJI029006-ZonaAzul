@@ -1,21 +1,27 @@
 class Aplicacao:
 
+    VALORHORA = 2
+    VALORFRACAO = 1
+    
     usuario = []
     fiscais = []
     totem = []
-    vaga = []
+    vagas = dict()
     idServidor = 0 
 
     def __init__(self):
         pass
 
     def verificarSituacaoVaga(self, idVaga):
-        return 
+        if(self.sendToTotem(idVaga)):
+            return True
 
     def confirmarSituacaoVaga(self, idVaga, status):
-        return 
+        self.sendToTotem(idVaga, status)
         
-    def cadastrarVaga(self, idVaga, idEstacionamento, idSensor):
-        return True
+    def cadastrarVaga(self, idVaga, idSensor):
+        self.vagas[idVaga] = idSensor
 
+    def sendToTotem(self, comando, **argv):
+        return True
     

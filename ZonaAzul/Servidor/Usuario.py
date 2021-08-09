@@ -1,22 +1,28 @@
 from Carro import Carro
-
 class Usuario:
 
-    idUsario = ""
     email = ""
     senha = ""
+    user = ""
     carro = Carro()
-    cpfPessoa = ""
+    cpf = ""
     nome = ""
+    login = False
+    tempo = 0
 
-    def __init__(self):
-        pass
+    def __init__(self,nome, cpf, email):
+        self.nome = nome
+        self.cpf = cpf
+        self.email = email
 
-    def getidUsuario(self):        
-        return self.idUsario
+    def __repr__(self):
+        return "Nome: "+self.nome + ", CPF: " + self.cpf +", Email: " + self.email + ", user: " + self.user + ", Senha: " + self.senha + " Placa: " + self.carro.getPlaca() + " Modelo: " + self.carro.getModelo() + " tempo: " + str(self.tempo)
 
-    def setidUsuario(self, id):
-        self.idUsario = id
+    def getUser(self):        
+        return self.user
+
+    def setUser(self, id):
+        self.user = id
 
     def getEmail(self):        
         return self.email
@@ -24,14 +30,17 @@ class Usuario:
     def setEmail(self,mail):
         self.email = mail
 
-    def set(self, senha):
+    def getSenha(self):
+        return self.senha
+
+    def setSenha(self, senha):
         self.senha = senha
 
     def getCpf(self):        
-        return self.cpfPessoa
+        return self.cpf
 
     def setCpf(self, cpf):
-        self.cpfPessoa = cpf
+        self.cpf = cpf
 
     def getNome(self):        
         return self.nome
@@ -40,7 +49,19 @@ class Usuario:
         self.nome = nick
 
     def getCarro(self):
-        return self.carro
+        return "Placa: "+self.carro.getPlaca() + " Modelo: " + self.carro.getModelo()
 
-    def setCarro(self, car):
-        self.carro = Carro
+    def setCarro(self, placa, modelo):
+        self.carro = Carro(placa,modelo)
+
+    def getLogin(self):
+        return self.login
+    
+    def setLogin(self, login):
+        self.login = login
+
+    def setTempo(self, tempo):
+        self.tempo = tempo
+    
+    def getTempo(self):
+        return self.tempo

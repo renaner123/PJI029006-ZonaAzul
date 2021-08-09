@@ -3,8 +3,12 @@ class Carro:
     placa = ""
     modelo = ""
 
-    def __init__(self):
-        pass
+    def __init__(self, placa="", modelo=""):
+        self.placa = placa
+        self.modelo = modelo
+
+    def __repr__(self):
+         return "Placa: ", self.placa + ", Modelo: " + self.modelo        
 
     def getPlaca(self):
         return self.placa
@@ -16,4 +20,4 @@ class Carro:
         return self.modelo
     
     def setModelo(self, modelo):
-        return self.modelo
+        self.modelo = modelo

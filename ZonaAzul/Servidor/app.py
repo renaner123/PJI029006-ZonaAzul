@@ -29,7 +29,7 @@ nav.init_app(app)
 interface = InterfaceUsuario()
 
 user = Usuario("Renan", "08299152909", "renan@teste")
-interface.criarConta(user, "renaner123", "444998")
+interface.criarConta(user, "renaner", "123456")
 interface.cadastrarVeiculo(user, "MIJ5419", "Uno")
 vagas = Vaga()
 
@@ -156,5 +156,13 @@ def listar_cadastro():
 
         return render_template('usuario_listar.html', contatos=contatos, vagas=vaga, form=form)
     return redirect(url_for('autenticar'))
+
+@app.route('/totem', methods=['GET', 'POST'])
+def comunicaoTotem():
+    ## Pode ser usado para receber e pegar dados do Totem.
+    if session.get('logged_in'):
+            return redirect(url_for('autenticar'))
+    return render_template('veiculo_cadastrar.html', title='Cadastrar veiculo')
+
 if __name__ == '__main__':
     app.run(debug=True)

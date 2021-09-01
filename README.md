@@ -14,6 +14,8 @@ Tabela de conteúdos
    * [Diagrama de classe sistema Servidor](#Diagrama-de-classe-sistema-Servidor)
    * [Diagrama de classe sistema Totem](#Diagrama-de-classe-sistema-Totem)
    * [Diagrama de sequências](#Diagrama-de-sequência-efetuar-pagamento-sistema-Servidor)
+   * [Para executar a aplicação Servidor](#Para-executar-a-aplicação-Servidor)
+     * [Para acessar a aplicação](#Para-acessar-a-aplicação)
 <!--te-->
 
 ## Proposta do Projeto da disciplina PJI029006 
@@ -317,3 +319,27 @@ sensores.
 <div style="text-align:center">
    <img src="./img/Sequence_notificar_pagamento.PNG" />
 </div>
+
+### Para executar a aplicação
+
+O ideal é fazer uso do Python Virtualenv, mas seria possível executar a aplicação sem ele. Basta instalar os pacotes que estão no arquivo [requirements.txt.](ZonaAzul/Servidor/requirements.txt)
+
+```shell
+python3 -m venv venv
+source venv/bin/activate
+
+# para instalar os pacotes. Só é necessário fazer isso uma única vez
+pip install -r requirements.txt
+
+# para executar a aplicação
+python3 app.py
+
+```
+
+### Para acessar a aplicação
+
+No navegador web entre com o endereço `http://localhost:5000`. O banco conta com um usuário para teste
+
+| Usuário | Senha |
+| ------- | -----|
+| renaner    | 123456 |

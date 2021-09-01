@@ -1,6 +1,5 @@
 from flask_wtf import FlaskForm
 from wtforms import SubmitField, StringField, PasswordField, validators
-
 class UsuarioForm(FlaskForm):
     nome = StringField('nome',[validators.DataRequired()])
     cpf = StringField('cpf',[validators.DataRequired()])

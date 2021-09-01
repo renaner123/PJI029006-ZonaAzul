@@ -1,5 +1,5 @@
-from InterfaceUsuario import InterfaceUsuario
-from Usuario import Usuario
+from servidor.InterfaceUsuario import InterfaceUsuario
+from servidor.Usuario import Usuario
 
 if __name__ == '__main__':
     

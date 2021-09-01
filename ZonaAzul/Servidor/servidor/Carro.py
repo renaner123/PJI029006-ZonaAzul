@@ -7,9 +7,11 @@ class Carro:
         self.placa = placa
         self.modelo = modelo
 
-    def __repr__(self):
-         return "Placa: ", self.placa + ", Modelo: " + self.modelo        
+    def __str__(self):
+        return 'Placa: {} Modelo: {}'.format(self.placa, self.modelo)
 
+    def __repr__(self):
+        return 'Placa: {} Modelo: {}'.format(self.placa, self.modelo)
     def getPlaca(self):
         return self.placa
 

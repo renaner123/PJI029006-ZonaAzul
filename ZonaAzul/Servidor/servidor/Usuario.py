@@ -1,4 +1,4 @@
-from Carro import Carro
+from servidor.Carro import Carro
 class Usuario:
 
     email = ""
@@ -9,6 +9,8 @@ class Usuario:
     nome = ""
     login = False
     tempo = 0
+    vaga = 0
+
 
     def __init__(self,nome, cpf, email):
         self.nome = nome
@@ -16,15 +18,15 @@ class Usuario:
         self.email = email
 
     def __repr__(self):
-        return "Nome: "+self.nome + ", CPF: " + self.cpf +", Email: " + self.email + ", user: " + self.user + ", Senha: " + self.senha + " Placa: " + self.carro.getPlaca() + " Modelo: " + self.carro.getModelo() + " tempo: " + str(self.tempo)
+        return "Nome: "+self.nome + ", CPF: " + self.cpf +", Email: " + self.email + ", user: " + self.user + ", Senha: " + self.senha + " Carro: " + self.getCarro() + " tempo: " + str(self.tempo)
 
-    def getUser(self):        
+    def getUser(self):
         return self.user
 
     def setUser(self, id):
         self.user = id
 
-    def getEmail(self):        
+    def getEmail(self):
         return self.email
 
     def setEmail(self,mail):
@@ -36,13 +38,13 @@ class Usuario:
     def setSenha(self, senha):
         self.senha = senha
 
-    def getCpf(self):        
+    def getCpf(self):
         return self.cpf
 
     def setCpf(self, cpf):
         self.cpf = cpf
 
-    def getNome(self):        
+    def getNome(self):
         return self.nome
 
     def setNome(self, nick):
@@ -56,12 +58,19 @@ class Usuario:
 
     def getLogin(self):
         return self.login
-    
+
     def setLogin(self, login):
         self.login = login
 
     def setTempo(self, tempo):
         self.tempo = tempo
-    
+
     def getTempo(self):
         return self.tempo
+
+    def getVaga(self):
+        return self.vaga
+
+    def setVaga(self,vaga):
+        self.vaga = vaga
+

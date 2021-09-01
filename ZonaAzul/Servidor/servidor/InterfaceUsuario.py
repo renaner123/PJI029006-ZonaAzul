@@ -1,6 +1,6 @@
-from Usuario import Usuario
-from Carro import Carro
-from Aplicacao import Aplicacao
+from servidor.Usuario import Usuario
+from servidor.Carro import Carro
+from servidor.Aplicacao import Aplicacao
 
 class InterfaceUsuario:
 
@@ -56,10 +56,7 @@ class InterfaceUsuario:
         return self.tempo
 
     def cadastrarVeiculo(self, user, placa, modelo):
-        if(user.login == True):
-            user.setCarro(placa,modelo)
-        else:
-            print("Precisa se logar no sistema")
+        user.setCarro(placa,modelo)
 
     def getUsuarios(self):
         return self.listUser

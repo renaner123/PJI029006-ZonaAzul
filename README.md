@@ -43,9 +43,6 @@ sensores.
 
 ## Requisitos Funcionais
 
-<h4 align="center"> 
-	🚧 Em construção...  🚧
-</h4>
 
 ### Requisitos funcionais servidor:
 * **R1.** Servidor de informar o número de vagas ocupadas 
@@ -83,10 +80,6 @@ sensores.
 * **RNF02.** Os sensores devem ser sem fio
 
 ## Regras de negócio.
-
-<h4 align="center"> 
-	🚧 Em construção...  🚧
-</h4>
 
 * **RN00:** Usuário não pode estacionar por mais de 2 horas por dia na mesma vaga
 * **RN01:** Usuário só pode cadastrar 1 veículo
@@ -343,3 +336,76 @@ No navegador web entre com o endereço `http://localhost:5000`. O banco conta co
 | Usuário | Senha |
 | ------- | -----|
 | renaner    | 123456 |
+
+### Cadastrando vagas no servidor
+
+Servidor possui rotas ao qual o sistema Totem pode cadastrar as vagas que estão com sensor configurados. Para cadastrar, é necessário enviar uma requisição POST contendo as informações da vaga na URL http://127.0.0.1:5000/vagas. Abaixo um exemplo de Json a ser enviado.
+
+```json
+{
+	"vagas": [
+			{
+			"idVaga" : 1,
+			"idSensor" : 11
+			},
+			{
+			"idVaga" : 2,
+			"idSensor" : 12
+			},
+		{
+			"idVaga" : 3,
+			"idSensor" : 13
+			},
+		{
+			"idVaga" : 4,
+			"idSensor" : 20
+			},
+		{
+			"idVaga" : 5,
+			"idSensor" : 25
+			}
+	]
+}
+
+
+```
+
+Para testar essa funcionalidade, pode-se também usar o Curl com o seguinte comando
+
+```shell
+curl -X POST http://127.0.0.1:5000/vagas -H "Content-Type: application/json" -d '{"vagas": [{"idVaga" : 1,"idSensor" : 11},{"idVaga" : 2,	"idSensor" : 12},{"idVaga" : 3,"idSensor" : 13},{"idVaga" : 4,"idSensor" : 20	},{"idVaga" : 5,"idSensor" : 25}]}'
+```
+### Alterando status e sensor de uma vaga
+
+Sistema servidor também permite o sistema Totem fazer alterações de status e de sensor configurado em um determina vaga. Abaixo um exemplo de Json a ser enviado para:
+
+Alterar status. Usar URL http://127.0.0.1:/vagas/status com o corpo Json abaixo
+
+```json
+{
+	"idVaga" : 1,
+	"status": true
+}
+	
+```
+Alterar sensor. Usar URL http://127.0.0.1:/vagas/sensor com o corpo Json abaixo
+```json
+	{
+	"idVaga" : 4,
+	"idSensor": 99
+	}
+
+```
+
+Caso queria testar sem o sistema totem, pode se usar o CURL conforme abaixo.
+
+
+```shell
+curl -X POST http://127.0.0.1:5000/vagas/status -H "Content-Type: application/json" -d '{"idVaga" : 1,"status": true}'
+
+```
+
+```shell
+curl -X POST http://127.0.0.1:5000/vagas/sensor -H "Content-Type: application/json" -d '{"idVaga" : 1,"idSensor": 99}'
+
+```

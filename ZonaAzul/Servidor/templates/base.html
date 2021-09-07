@@ -1,4 +1,5 @@
 {% extends 'bootstrap/base.html' %}
+
 {% block styles %}
     {{ super() }}
     {{ fontawesome_html() }}
@@ -20,6 +21,8 @@
 
 {% block content %}
     <div class="container">
+        <a matricula= Teste, onclick="Timer()">
+                            <span class="glyphicon glyphicon-edit"></span></a>
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if category, messages %}
                 {% for category, message in messages %}
@@ -44,6 +47,41 @@
       });
     });
   </script>
+    <script>
+    function Timer() {
+    var retorno;
+    setTimeout(function() { $.ajax({
+        url: '/timer',
+        dataType: "json",
+        type: 'GET',
+
+        success: function(res) {
+            console.log(res);
+            if(res['resultado']==0)
+                stopajax(),
+                alert("Faltam 10 segundos para expirar o tempo")
+            else
+                setInterval('Timer()', 5000);
+        },
+        error: function(error) {
+
+            return
+        }
+    });
+    }, 1000)
+    return
+    }
+
+    function refreshPage() {
+        location.reload(true);
+    }
+
+    function stopajax() {
+        location.reload(true);
+    }
+
+    </script>
+
 {% endblock %}
 
 </html>

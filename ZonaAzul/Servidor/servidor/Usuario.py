@@ -10,6 +10,7 @@ class Usuario:
     login = False
     tempo = 0
     vaga = 0
+    temVaga = False
 
 
     def __init__(self,nome, cpf, email):
@@ -73,4 +74,10 @@ class Usuario:
 
     def setVaga(self,vaga):
         self.vaga = vaga
+
+    def setTemVaga(self,temvaga):
+        self.temVaga = temvaga
+
+    def getTemVaga(self):
+        return self.temVaga
 

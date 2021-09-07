@@ -5,17 +5,12 @@ class Vaga:
     idVaga = 0
     idSensor = 0
     status = False
-    carro = Carro()
-    listVagas = dict()
+    tempo = 0
+    tempoDatatime = 0
 
-    listVagas[1] = "vazio"
-    listVagas[2] = "vazio"
-    listVagas[3] = "vazio"
-    listVagas[4] = "vazio"
-    listVagas[5] = "vazio"
-
-    def __init__(self):
-        pass
+    def __init__(self, idVaga, idSensor):
+        self.idVaga = idVaga
+        self.idSensor = idSensor
 
     def setIdVaga(self, id):
         self.idVaga = id
@@ -32,36 +27,17 @@ class Vaga:
     def setStatus(self,status):
         self.status = status
     
-    def getStatus(self,vaga):
-        for x in self.listVagas:
-            if(x==vaga):
-                if(self.listVagas[x]!="vazio"):
-                    return False
-        print(self.listVagas)
-        return True
+    def getStatus(self):
+        return self.status
 
-    def setCarro(self, carro):
-        self.carro = carro
-    
-    def getCarro(self):
-        return self.carro
+    def setTempo(self, tempo):
+        self.tempo = tempo
 
-    def setUsuarioVaga(self,user, vaga):
+    def getTempo(self):
+        return self.tempo
 
-        for x in self.listVagas:
-            if(x==int(vaga)):
-                if (self.listVagas[int(vaga)] == "vazio"):
-                    self.listVagas[int(vaga)] = user
-                else:
-                    return False
-        return True
+    def setDatatime(self,data):
+        self.tempoDatatime = data
 
-    def getVagas(self):
-        return self.listVagas
-
-    def getVagaUser(self,user):
-        for x in self.listVagas:
-            if(self.listVagas[x]==user):
-                return x
-        return 0
-
+    def getDatatime(self):
+        return self.tempoDatatime

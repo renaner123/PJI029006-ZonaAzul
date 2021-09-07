@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% import 'bootstrap/wtf.html' as wtf %}
 {% block styles %}
-
     {{ super() }}
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
@@ -27,8 +26,8 @@
                             <th>Modelo Carro</th>
                             <th>Placa Carro</th>
                             <th>User</th>
-                            <th>Tempo</th>
                             <th>Vaga</th>
+                            <th>Tempo(s)</th>
                             <th></th>
                         </tr>
                         </thead>
@@ -39,8 +38,8 @@
                             <td>{{ contatos['carro'].modelo }}</td>
                             <td>{{ contatos['carro'].placa }}</td>
                             <td>{{ contatos['user'] }}</td>
-                            <td>{{ contatos['tempo'] }}</td>
                             <td>{{ vagas }}</td>
+                            <td>{{ tempo }}</td>
                             <td>
                                 <a oi={{ contatos }} onclick="Excluir(this)" ><span class="fas fa-trash-alt"></span></a>
                             </td>

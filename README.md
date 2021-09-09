@@ -15,6 +15,7 @@ Tabela de conteúdos
    * [Diagrama de classe sistema Totem](#Diagrama-de-classe-sistema-Totem)
    * [Diagrama de sequências](#Diagrama-de-sequência-efetuar-pagamento-sistema-Servidor)
    * [Sistema Servidor](#Sistema-Servidor)
+     * [Funcionalidades implementadas](#Funcionalidades-implementadas)
      * [Para acessar e executar a aplicação Servidor](#Para-acessar-e-executar-a-aplicação-Servidor)
      * [Integração com o sistema Totem](#Integração-com-o-Sistema-Totem)
      * [Demonstração do sistema Servidor em execução](#Demonstração-do-sistema-Servidor-em-execução)

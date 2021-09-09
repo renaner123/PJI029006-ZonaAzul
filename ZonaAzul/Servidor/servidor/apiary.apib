@@ -1,0 +1,123 @@
+FORMAT: 1A
+HOST: http://localhost:5000
+
+# ZonaAzul_ServidorPJI2
+
+Está API mostra como o sistema Totem pode fazer a integração com o sistema Servidor.
+
+## Servidor [/vagas]
+
+### Adicionar vagas [POST]
+
+Você pode adicionar uma ou mais vagas usando esta ação. É preciso um objeto JSON contendo as informações da vaga, 
+que seriam o ID da vaga e o ID do sensor.
+
++ Request (application/json)
+
+        
+        {"vagas" : [
+            {
+                "idVaga" : 1,
+                "idSensor" : 11},
+                {"idVaga" : 2,
+                "idSensor" : 12},
+                {"idVaga" : 3,
+                "idSensor" : 13},
+                {"idVaga" : 4,
+                "idSensor" : 20},
+                {"idVaga" : 5,
+                "idSensor" : 25}
+            ]
+        }        
+
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /vagas
+
+    + Body
+
+            {
+                "resultado": true
+            }
+
+### Atualizar Status de uma Vaga [PUT]
+
+Você pode alterar o status de uma vaga usando esta ação. É preciso um objeto JSON contendo as informações da vaga, 
+que seriam o ID da vaga e o status da vaga.
+
++ Request (application/json)
+
+        
+            {
+                "idVaga": 1,
+                "status": false
+            }
+
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /vagas/status
+
+    + Body
+
+            {
+                "resultado": true
+            }
+            
+## Servidor [/vagas/sensor]
+
+### Atualizar Sensor de uma Vaga [PUT]
+
+Você pode alterar o sensor de uma vaga usando esta ação. É preciso um objeto JSON contendo as informações da vaga, 
+que seriam o ID da vaga e o ID do sensor.
+
++ Request (application/json)
+
+        
+            {
+                "idVaga": 1,
+                "idSensor": 50
+            }
+
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /vagas/sensor
+
+    + Body
+
+            {
+                "resultado": true
+            }
+            
+   
+## Servidor [/vagas/{idVaga}]     
+
+### Mostrar dados de uma vaga [GET]
+
++ Parameters
+
+    + idVaga: 1 (number) - Identificador da vaga que deseja obter as informações
+
+
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /vagas/sensor
+
+    + Body
+
+            {
+              "idSensor": 11,
+              "status": false,
+              "tempo": 0
+            }

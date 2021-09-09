@@ -354,7 +354,7 @@ No navegador web entre com o endereço `http://localhost:5000`. O banco(memória
 | ------- | -----|
 | renaner    | 123456 |
 
-### Integração com o Sistema Totem
+## Integração com o Sistema Totem
 ### Cadastrando vagas no servidor 
 
 Servidor possui uma API ao qual o sistema Totem pode cadastrar as vagas que estão com sensor configurados. Para cadastrar, é necessário enviar uma requisição POST contendo as informações da vaga na URL http://127.0.0.1:5000/vagas. Abaixo um exemplo de Json a ser enviado usando o CURL.

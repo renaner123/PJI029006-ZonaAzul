@@ -14,8 +14,10 @@ Tabela de conteúdos
    * [Diagrama de classe sistema Servidor](#Diagrama-de-classe-sistema-Servidor)
    * [Diagrama de classe sistema Totem](#Diagrama-de-classe-sistema-Totem)
    * [Diagrama de sequências](#Diagrama-de-sequência-efetuar-pagamento-sistema-Servidor)
-   * [Para executar a aplicação Servidor](#Para-executar-a-aplicação-Servidor)
-     * [Para acessar a aplicação Servidor](#Para-acessar-a-aplicação-Servidor)
+   * [Sistema Servidor](#Sistema-Servidor)
+     * [Para acessar e executar a aplicação Servidor](#Para-acessar-e-executar-a-aplicação-Servidor)
+     * [Integração com o sistema Totem](#Integração-com-o-Sistema-Totem)
+     * [Demonstração do sistema Servidor em execução](#Demonstração-do-sistema-Servidor-em-execução)
 <!--te-->
 
 ## Proposta do Projeto da disciplina PJI029006 
@@ -313,7 +315,24 @@ sensores.
    <img src="./img/Sequence_notificar_pagamento.PNG" />
 </div>
 
-### Para executar a aplicação Servidor
+
+## Sistema Servidor
+
+### Funcionalidades implementadas
+
+- [x] Criar conta
+- [x] Cadastrar veículo
+- [x] Alterar veículo
+- [x] Efetuar pagamento
+- [x] Verificar tempo
+- [x] Cadastrar Vaga
+- [x] Atualizar status de uma vaga
+- [x] Atualizar sensor de uma vaga
+- [x] Notificar usuário de tempo expirando 
+- [x] Verificar situação de uma vaga
+- [ ] Verificar histórico
+
+### Para acessar e executar a aplicação Servidor
 
 O ideal é fazer uso do Python Virtualenv, mas seria possível executar a aplicação sem ele. Basta instalar os pacotes que estão no arquivo [requirements.txt.](ZonaAzul/Servidor/requirements.txt)
 
@@ -328,84 +347,50 @@ pip install -r requirements.txt
 python3 app.py
 
 ```
-
-### Para acessar a aplicação Servidor
-
-No navegador web entre com o endereço `http://localhost:5000`. O banco conta com um usuário para teste
+No navegador web entre com o endereço `http://localhost:5000`. O banco(memória) conta com um usuário para teste
 
 | Usuário | Senha |
 | ------- | -----|
 | renaner    | 123456 |
 
-### Cadastrando vagas no servidor
+### Integração com o Sistema Totem
+### Cadastrando vagas no servidor 
 
-Servidor possui rotas ao qual o sistema Totem pode cadastrar as vagas que estão com sensor configurados. Para cadastrar, é necessário enviar uma requisição POST contendo as informações da vaga na URL http://127.0.0.1:5000/vagas. Abaixo um exemplo de Json a ser enviado.
+Servidor possui uma API ao qual o sistema Totem pode cadastrar as vagas que estão com sensor configurados. Para cadastrar, é necessário enviar uma requisição POST contendo as informações da vaga na URL http://127.0.0.1:5000/vagas. Abaixo um exemplo de Json a ser enviado usando o CURL.
 
-```json
-{
-	"vagas": [
-			{
-			"idVaga" : 1,
-			"idSensor" : 11
-			},
-			{
-			"idVaga" : 2,
-			"idSensor" : 12
-			},
-		{
-			"idVaga" : 3,
-			"idSensor" : 13
-			},
-		{
-			"idVaga" : 4,
-			"idSensor" : 20
-			},
-		{
-			"idVaga" : 5,
-			"idSensor" : 25
-			}
-	]
-}
-
-
-```
-
-Para testar essa funcionalidade, pode-se também usar o Curl com o seguinte comando
 
 ```shell
 curl -X POST http://127.0.0.1:5000/vagas -H "Content-Type: application/json" -d '{"vagas": [{"idVaga" : 1,"idSensor" : 11},{"idVaga" : 2,	"idSensor" : 12},{"idVaga" : 3,"idSensor" : 13},{"idVaga" : 4,"idSensor" : 20	},{"idVaga" : 5,"idSensor" : 25}]}'
 ```
 ### Alterando status e sensor de uma vaga
 
-Sistema servidor também permite o sistema Totem fazer alterações de status e de sensor configurado em um determina vaga. Abaixo um exemplo de Json a ser enviado para:
+Sistema servidor também permite o sistema Totem fazer alterações de status e de sensor configurado em um determina vaga. Abaixo um exemplo de Json a ser enviado usando o CURL para:
 
 Alterar status. Usar URL http://127.0.0.1:/vagas/status com o corpo Json abaixo
-
-```json
-{
-	"idVaga" : 1,
-	"status": true
-}
-	
-```
-Alterar sensor. Usar URL http://127.0.0.1:/vagas/sensor com o corpo Json abaixo
-```json
-	{
-	"idVaga" : 4,
-	"idSensor": 99
-	}
-
-```
-
-Caso queria testar sem o sistema totem, pode se usar o CURL conforme abaixo.
-
 
 ```shell
 curl -X POST http://127.0.0.1:5000/vagas/status -H "Content-Type: application/json" -d '{"idVaga" : 1,"status": true}'
 
 ```
+Alterar sensor. Usar URL http://127.0.0.1:/vagas/sensor com o corpo Json abaixo
+
 
 ```shell
 curl -X POST http://127.0.0.1:5000/vagas/sensor -H "Content-Type: application/json" -d '{"idVaga" : 1,"idSensor": 99}'
 
 ```
+
+Também é possível listar os dados de uma vaga para verificar se a alteração foi realizada:
+
+```shell
+curl http://127.0.0.1:5000/vagas/1  
+
+```
+
+[Essa API foi documentada](https://zonaazulservidorpji2.docs.apiary.io/) de acordo com a especificação API Blueprint e a mesma pode ser visualizada com o [Apiary](https://apiary.io/). O código fonte dessa documentação também está disponível no arquivo [apiary.apib](ZonaAzul/Servidor/servidor/apiary.apib) nesse repositório. API serve para o Totem fazer a integração com o sistema Servidor.
+
+### Demonstração do sistema Servidor em execução
+
+Nessa demonstração foi utilizado o software Insomnia para simular o sistema Totem
+
+![](img/execucao.gif)
